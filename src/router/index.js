@@ -21,7 +21,7 @@ const routes = [
     name: "Members",
     component: () => import("../views/Members.vue"),
     meta: {
-      requireAuth: true,
+      requiresAuth: true,
     },
   },
   {
@@ -29,7 +29,7 @@ const routes = [
     name: "Contact",
     component: () => import("../views/Contact.vue"),
     meta: {
-      requireAuth: true,
+      requiresAuth: true,
     },
   },
   {
@@ -39,14 +39,28 @@ const routes = [
   },
 ];
 
-// router.beforeEach((to, from, next) => {
-
-// })
-
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  let routerAuthCheck = false;
+  // do our work
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    // Check if user Authenticated
+    if (routerAuthCheck) {
+      // User is authenticated
+      // TODO: commit to store that the user is authenticated
+      next();
+    } else {
+      // User is not authenticated
+      router.replace("/login");
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
