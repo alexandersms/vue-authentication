@@ -11,6 +11,13 @@
       <v-btn to="/about" class="mr-2" color="primary">About</v-btn>
       <v-btn to="/members" class="mr-2" color="primary">Members</v-btn>
       <v-btn to="/contact" class="mr-2" color="primary">Contact</v-btn>
+      <v-btn
+        @click="logout"
+        v-if="this.$store.state.userIsAuthorized"
+        class="mr-2"
+        color="primary"
+        >Logout</v-btn
+      >
     </v-app-bar>
 
     <v-main>
@@ -27,6 +34,12 @@ export default {
     return {
       clientId: process.env.VUE_APP_AUTH_CONFIG_CLIENTID,
     };
+  },
+
+  methods: {
+    logout() {
+      console.log("logging out");
+    },
   },
 
   beforeCreate() {},

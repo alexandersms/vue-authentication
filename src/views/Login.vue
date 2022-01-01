@@ -4,7 +4,8 @@
       <v-layout row wrap align-center>
         <v-flex xs12 sm8 offset-sm2 md6 offset-md3 lg4 offset-lg4>
           <v-card style="margin-bottom: 200px">
-            <div class="pa-3">LOGO GOES HERE</div>
+            <!-- <div class="pa-3">LOGO GOES HERE</div> -->
+            <img src="@/assets/logo.png" alt="logo-app" />
             <hr />
             <v-card-title primary-title>
               <div>
@@ -34,6 +35,12 @@
 <script>
 export default {
   name: "Login",
+  methods: {
+    auth0Login() {
+      //this.$store.dispatch("auth0Login");
+      console.log("We are in auth0Login");
+    },
+  },
 };
 </script>
 
