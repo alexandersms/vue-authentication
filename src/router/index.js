@@ -9,6 +9,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    // meta: {protected},
   },
   {
     path: "/about",
@@ -25,7 +26,16 @@ const routes = [
     name: "Contact",
     component: () => import("../views/Contact.vue"),
   },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Login.vue"),
+  },
 ];
+
+// router.beforeEach((to, from, next) => {
+
+// })
 
 const router = new VueRouter({
   mode: "history",

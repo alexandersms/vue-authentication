@@ -23,8 +23,12 @@
 export default {
   name: "App",
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      clientId: process.env.VUE_APP_AUTH_CONFIG_CLIENTID,
+    };
+  },
+
+  beforeCreate() {},
 };
 </script>
