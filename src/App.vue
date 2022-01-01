@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <v-app-bar-title>
-        <span>Vue Authentication</span>
+        <span>Vue Auth</span>
       </v-app-bar-title>
 
       <v-spacer></v-spacer>
