@@ -1,7 +1,7 @@
 {
-  "name": "PWA VueJS Test",
-  "short_name": "PVT",
-  "description": "Pwa VueJS test - Alex Simisi Nta",
+  "name": "Vue Authentication",
+  "short_name": "VAUTH",
+  "description": "Vue Authentication Project - Alex Simisi Nta",
   "manifest_version": "0.11",
   "icons": [
     {
