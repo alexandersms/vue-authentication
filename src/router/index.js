@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import store from "../store";
 
 Vue.use(VueRouter);
 
@@ -46,7 +47,10 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  let routerAuthCheck = true;
+  let routerAuthCheck = false;
+  if (routerAuthCheck) {
+    store.commit("SET_USER_IS_AUTHENTICATED", true);
+  }
   // do our work
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     // Check if user Authenticated

@@ -37,7 +37,7 @@ export default {
   name: "Login",
   methods: {
     auth0Login() {
-      //this.$store.dispatch("auth0Login");
+      this.$store.dispatch("auth0Login");
       console.log("We are in auth0Login");
     },
   },
